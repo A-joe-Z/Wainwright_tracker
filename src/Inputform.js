@@ -3,6 +3,7 @@ import 'leaflet/dist/leaflet.css';
 import { useEffect,useState } from 'react';
 import {isEmpty, update} from "lodash";
 import { Form, Button} from "react-bootstrap";
+import "./index.css";
 
 
 function Inputform({mountain, setClimbed}) {
@@ -48,7 +49,7 @@ function Inputform({mountain, setClimbed}) {
   };
 
   return (
-    <div className="App">
+    <div className="inputForm">
 
 
       {mountainData ? (
@@ -60,14 +61,14 @@ function Inputform({mountain, setClimbed}) {
           </div>
         ) : (
         <Form onSubmit={handleSubmit}>
-          <p>mark {mountain.name} as climbed</p>
+          <h1 className="mountainLabel">{mountain.name}</h1>
           <Form.Group controlId="body">
-            <Form.Label>description</Form.Label>
-            <Form.Control name="descriptionBody" as="textarea" placeholder="Enter a description" onChange={(e) => setDescription(e.target.value)}/>
+            <Form.Label className="inputLabels">description</Form.Label>
+            <Form.Control className="inputText" name="descriptionBody" as="textarea" placeholder="Enter a description of the mountain" onChange={(e) => setDescription(e.target.value)}/>
             <p></p>
-            <Form.Label>Who did you climbed it with</Form.Label>
-            <Form.Control name="whoClimbed" as="textarea" placeholder="Enter a description" onChange={(e) => setClimbedWith(e.target.value)}/>
-            <Form.Label>date it was climbed {dateClimbed}</Form.Label>
+            <Form.Label className="inputLabels">Who did you climbed it with</Form.Label>
+            <Form.Control className="inputText" name="whoClimbed" as="textarea" placeholder="Who did you climb this with" onChange={(e) => setClimbedWith(e.target.value)}/>
+            <Form.Label className="inputLabels">date it was climbed {dateClimbed}</Form.Label>
             <input type="date" value={"value"} onChange={(e) => setDateClimbed(e.target.value)}/>
             <button type="submit">Submit</button>
           </Form.Group>

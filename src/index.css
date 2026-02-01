@@ -30,4 +30,34 @@ code {
   padding: 0px;
   width:95%;
 }
+
+.mountainLabel{
+  text-align: center;
+}
+
+.inputLabels{
+  text-align: center;
+}
+
+.inputText{
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  align-items: center;
+  margin-left: 2.5%;
+  min-height: 80px;
+  max-width:95%;
+  width:95%;
+}
     
+.inputForm{
+  border-color: black;
+  border-style: solid;
+  border-radius:5px;
+  padding: 5px;
+  text-align: center;
+}
+
+.inputSubmit{
+  border-radius: 5px;
+}
